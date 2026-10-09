@@ -112,7 +112,7 @@ export default function Page() {
         <nav className="site-nav" aria-label="Main navigation">
           <a className="wordmark" href="#top" aria-label="Shane Lockhart home"><span>SL</span><span>SHANE LOCKHART</span></a>
           <div className="nav-links"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a></div>
-          <a className="nav-cta" href={RESUME} download="Shane-Lockhart-Resume.pdf"><Download aria-hidden="true" />Resume</a>
+          <a className="nav-cta" href={RESUME} target="_blank" rel="noopener"><Download aria-hidden="true" />Resume</a>
         </nav>
       </header>
 
@@ -125,7 +125,7 @@ export default function Page() {
             <div>
               <p className="intro">Former criminal investigator studying cybersecurity at Southern New Hampshire University. I build investigative research tools and documentation workflows. Available now for internships and full-time roles, finishing my degree online alongside work.</p>
               <div className="hero-actions">
-                <a className="btn btn-primary" href={RESUME} download="Shane-Lockhart-Resume.pdf"><Download aria-hidden="true" />Download Resume</a>
+                <a className="btn btn-primary" href={RESUME} target="_blank" rel="noopener"><Download aria-hidden="true" />Download Resume</a>
                 <a className="btn btn-ghost" href="#contact"><Mail aria-hidden="true" />Get in touch</a>
               </div>
             </div>
@@ -175,14 +175,14 @@ export default function Page() {
               <li><a href={`mailto:${EMAIL}`}><Mail aria-hidden="true" /><span><small>Email</small>{EMAIL}</span></a></li>
               <li><a href={GITHUB} target="_blank" rel="noreferrer"><GithubMark /><span><small>GitHub</small>github.com/shanelockhart</span></a></li>
             </ul>
-            <a className="btn btn-primary" href={RESUME} download="Shane-Lockhart-Resume.pdf"><Download aria-hidden="true" />Download Resume</a>
+            <a className="btn btn-primary" href={RESUME} target="_blank" rel="noopener"><Download aria-hidden="true" />Download Resume</a>
           </div>
         </div>
       </section>
 
       <footer className="site-footer">
         <div><a className="wordmark" href="#top"><span>SL</span><span>SHANE LOCKHART</span></a><p>Investigator. Builder. Cybersecurity Student.</p></div>
-        <div className="footer-right"><a href={`mailto:${EMAIL}`}>{EMAIL}</a><a href={RESUME} download="Shane-Lockhart-Resume.pdf">Resume <Download aria-hidden="true" /></a><a href="#top">Back to top <ArrowUpRight aria-hidden="true" /></a></div>
+        <div className="footer-right"><a href={`mailto:${EMAIL}`}>{EMAIL}</a><a href={RESUME} target="_blank" rel="noopener">Resume <Download aria-hidden="true" /></a><a href="#top">Back to top <ArrowUpRight aria-hidden="true" /></a></div>
       </footer>
     </main>
   )
