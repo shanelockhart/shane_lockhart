@@ -1,6 +1,6 @@
 import { ArrowDownRight, ArrowUpRight, Download, ExternalLink, Fingerprint, Mail, ScanSearch, ShieldCheck } from 'lucide-react'
 
-const EMAIL = 'aslockhart10@gmail.com'
+const EMAIL = 'shane@shanelockhart.pro'
 const GITHUB = 'https://github.com/shanelockhart'
 const RESUME = '/Shane-Lockhart-Resume.pdf'
 
