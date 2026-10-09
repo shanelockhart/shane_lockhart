@@ -1,7 +1,7 @@
 import { ArrowDownRight, ArrowUpRight, Download, ExternalLink, Fingerprint, Mail, ScanSearch, ShieldCheck } from 'lucide-react'
 
 const EMAIL = 'aslockhart10@gmail.com'
-const GITHUB = 'https://github.com/Intelliwebchatt'
+const GITHUB = 'https://github.com/shanelockhart'
 const RESUME = '/Shane-Lockhart-Resume.pdf'
 
 function GithubMark() {
@@ -173,7 +173,7 @@ export default function Page() {
             <p>I&apos;m ready to start now, whether that&apos;s an internship or a full-time role. I&apos;m completing my degree online, so there&apos;s no waiting on graduation. If you&apos;re hiring for digital forensics, cybersecurity, or OSINT investigation work, I&apos;d like to hear about it.</p>
             <ul className="contact-list">
               <li><a href={`mailto:${EMAIL}`}><Mail aria-hidden="true" /><span><small>Email</small>{EMAIL}</span></a></li>
-              <li><a href={GITHUB} target="_blank" rel="noreferrer"><GithubMark /><span><small>GitHub</small>github.com/Intelliwebchatt</span></a></li>
+              <li><a href={GITHUB} target="_blank" rel="noreferrer"><GithubMark /><span><small>GitHub</small>github.com/shanelockhart</span></a></li>
             </ul>
             <a className="btn btn-primary" href={RESUME} download="Shane-Lockhart-Resume.pdf"><Download aria-hidden="true" />Download Resume</a>
           </div>
