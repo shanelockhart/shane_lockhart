@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowUpRight, Download, ExternalLink, Fingerprint, Mail, ScanSearch, ShieldCheck } from 'lucide-react'
+import { ArrowDownRight, ArrowUpRight, BarChart3, Download, ExternalLink, Fingerprint, Mail, ScanSearch, ShieldCheck } from 'lucide-react'
 
 const EMAIL = 'shane@shanelockhart.pro'
 const GITHUB = 'https://github.com/shanelockhart'
@@ -24,22 +24,27 @@ type Project = {
   icon: typeof ScanSearch
   detail: string
   link?: string
+  linkLabel?: string
+  analysisLink?: string
 }
 
 const projects: Project[] = [
   {
     number: '01',
-    title: 'Operators Logic',
-    eyebrow: 'Investigative research tools',
-    status: 'In development',
-    description: 'Tools for search-query building, case organization, and research reporting.',
-    note: "Early tools are already usable. I'm expanding it into a larger multi-page platform for investigative research.",
-    tags: ['Search-query building', 'Case organization', 'Research reporting'],
-    contribution: 'Project concept, investigative workflow design, and development with AI assistance.',
-    approach: 'Turning the habits of practical investigation into focused tools that make research easier to structure and communicate.',
+    title: 'Chilton Justice Observatory',
+    eyebrow: 'Public data · one-year research study',
+    status: 'Live · ongoing study',
+    description: 'A one-year study of publicly available jail data, tracking population changes, bond amounts, arresting agencies, demographics, and booking activity.',
+    note: 'Built around the jail where I served as administrator and warden. Daily data collection feeds a nightly dashboard update and a journal of dated, anonymous analysis.',
+    tags: ['Automated data pipeline', 'Interactive statistics', 'Anonymous analysis'],
+    contribution: 'Study design, corrections expertise, source validation, and AI-assisted dashboard and analysis development.',
+    approach: 'Preserve dated source observations, check the figures, distinguish findings from possible explanations, and publish aggregate statistics and anonymous comparisons.',
     className: 'feature-project',
-    icon: ScanSearch,
-    detail: 'DORK SELECTOR  /  RESEARCH PRO',
+    icon: BarChart3,
+    detail: 'DAILY DATA  /  DATED ANALYSIS',
+    link: 'https://chilton-justice-observatory.shanes.chatgpt.site',
+    linkLabel: 'View live dashboard',
+    analysisLink: 'https://chilton-justice-observatory.shanes.chatgpt.site/analysis',
   },
   {
     number: '02',
@@ -99,7 +104,8 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
             <p><strong>Approach</strong>{project.approach}</p>
           </div>
         </details>
-        {project.link && <a className="text-link" href={project.link} target="_blank" rel="noreferrer">View project <ExternalLink aria-hidden="true" /></a>}
+        {project.link && <a className="text-link" href={project.link} target="_blank" rel="noreferrer">{project.linkLabel || 'View project'} <ExternalLink aria-hidden="true" /></a>}
+        {project.analysisLink && <div><a className="text-link" href={project.analysisLink} target="_blank" rel="noreferrer">Read the Analysis Journal <ExternalLink aria-hidden="true" /></a></div>}
       </div>
     </article>
   )
