@@ -1,4 +1,5 @@
 import { ArrowDownRight, ArrowUpRight, BarChart3, Download, ExternalLink, Fingerprint, Mail, ScanSearch, ShieldCheck } from 'lucide-react'
+import './credential-teaser.css'
 
 const EMAIL = 'shane@shanelockhart.pro'
 const GITHUB = 'https://github.com/shanelockhart'
