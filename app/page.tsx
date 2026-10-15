@@ -4,6 +4,7 @@ import './credential-teaser.css'
 const EMAIL = 'shane@shanelockhart.pro'
 const GITHUB = 'https://github.com/shanelockhart'
 const RESUME = '/Shane-Lockhart-Resume.pdf'
+const CREDENTIALS_PDF = '/Shane-Lockhart-Credentials.pdf'
 
 function GithubMark() {
   return (
@@ -74,6 +75,65 @@ const projects: Project[] = [
   },
 ]
 
+const credentialCards = [
+  {
+    "title": "SWAT Diploma",
+    "detail": "Alabama Department of Public Safety · July 25, 2003",
+    "category": "Tactical operations",
+    "image": 0,
+    "featured": true
+  },
+  {
+    "title": "Crime Scene Technology",
+    "detail": "Evidence collection and documentation",
+    "category": "Investigations",
+    "image": 1,
+    "featured": false
+  },
+  {
+    "title": "FBI Sniper / Observer",
+    "detail": "Basic Sniper / Observer Course · 2005",
+    "category": "Tactical training",
+    "image": 2,
+    "featured": false
+  },
+  {
+    "title": "Jail Administration",
+    "detail": "National Institute of Corrections",
+    "category": "Corrections leadership",
+    "image": 3,
+    "featured": false
+  },
+  {
+    "title": "EMT-Basic",
+    "detail": "Alabama Fire College",
+    "category": "Emergency medical",
+    "image": 4,
+    "featured": false
+  },
+  {
+    "title": "Electrical Apprenticeship",
+    "detail": "Wayne J. Griffin · Level 2",
+    "category": "Technical trades",
+    "image": 5,
+    "featured": false
+  },
+  {
+    "title": "Web Design Coursework",
+    "detail": "Design Aesthetics for Web Design",
+    "category": "Digital and creative",
+    "image": 6,
+    "featured": false
+  },
+  {
+    "title": "Homicide Investigation",
+    "detail": "The Investigative Challenge",
+    "category": "Criminal investigations",
+    "image": 7,
+    "featured": false
+  }
+]
+
 const proof = [
   { value: '15 yrs', label: 'Law enforcement career' },
   { value: '4', label: 'Investigators supervised' },
@@ -133,7 +193,7 @@ export default function Page() {
               <p className="intro">Former criminal investigator studying cybersecurity at Southern New Hampshire University. I build investigative research tools and documentation workflows. Available now for internships and full-time roles, finishing my degree online alongside work.</p>
               <div className="hero-actions">
                 <a className="btn btn-primary" href={RESUME} target="_blank" rel="noopener"><Download aria-hidden="true" />Download Resume</a>
-                <a className="btn btn-ghost" href="#contact"><Mail aria-hidden="true" />Get in touch</a>
+                <a className="btn btn-ghost" href="#credentials"><ShieldCheck aria-hidden="true" />Credentials</a><a className="btn btn-ghost" href="#contact"><Mail aria-hidden="true" />Get in touch</a>
                 <a className="btn btn-ghost" href="/credentials">View Credentials <ArrowUpRight aria-hidden="true" /></a>
               </div>
             </div>
@@ -183,6 +243,28 @@ export default function Page() {
             <span>29 ORIGINAL DOCUMENTS  /  7 TRAINING AREAS <ArrowUpRight aria-hidden="true" /></span>
           </a>
         </div>
+      </section>
+
+
+      <section className="credentials-section section-shell" id="credentials">
+        <div className="section-heading"><p className="section-label">[ CREDENTIALS & TRAINING ]</p><p className="section-note">Selected original certificates<br />from field training and professional study.</p></div>
+        <div className="credentials-heading">
+          <div><h2>Training that<br /><em>backs the work.</em></h2><p>Original historical records from law enforcement, investigative interviewing, tactical operations, corrections, fire and EMS, electrical apprenticeship, and digital coursework. These documents show completed training; they do not establish active licensure.</p></div>
+          <div className="credential-download"><span>29 DOCUMENTS / 7 TRAINING AREAS</span><a className="btn btn-primary" href={CREDENTIALS_PDF} download="Shane-Lockhart-Credentials.pdf"><Download aria-hidden="true" />Download credential portfolio</a><small>32-page public highlights PDF. Full archive available for verification on request.</small></div>
+        </div>
+        <div className="credentials-grid">
+          {credentialCards.map((card) => <article className={`credential-card ${card.featured ? 'credential-featured' : ''}`} key={card.title}>
+            <div className={`credential-photo credential-photo-${card.image}`} role="img" aria-label={`Original certificate: ${card.title}`} />
+            <div className="credential-copy">
+              {card.featured && <strong className="credential-distinction">FEATURED CREDENTIAL</strong>}
+              <span className="credential-category">{card.category}</span>
+              <h3>{card.title}</h3>
+              <p>{card.detail}</p>
+              {card.featured && <p className="credential-feature-note">Special Weapons and Tactics diploma awarded in Selma, Alabama. Original completion date: July 25, 2003.</p>}
+            </div>
+          </article>)}
+        </div>
+        <p className="credentials-fineprint">Certificates are historical training records, not proof of current authorization. Personal reference numbers are masked in the downloadable public copy. Verification of originals is available by request at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
       </section>
 
       <section className="about-section section-shell" id="about">
