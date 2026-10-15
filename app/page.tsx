@@ -1,4 +1,5 @@
 import { ArrowDownRight, ArrowUpRight, BarChart3, Download, ExternalLink, Fingerprint, Mail, ScanSearch, ShieldCheck } from 'lucide-react'
+import './credential-teaser.css'
 
 const EMAIL = 'shane@shanelockhart.pro'
 const GITHUB = 'https://github.com/shanelockhart'
@@ -117,7 +118,7 @@ export default function Page() {
       <header className="site-header">
         <nav className="site-nav" aria-label="Main navigation">
           <a className="wordmark" href="#top" aria-label="Shane Lockhart home"><span>SL</span><span>SHANE LOCKHART</span></a>
-          <div className="nav-links"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+          <div className="nav-links"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#credentials">Credentials</a><a href="#about">About</a><a href="#contact">Contact</a></div>
           <a className="nav-cta" href={RESUME} target="_blank" rel="noopener"><Download aria-hidden="true" />Resume</a>
         </nav>
       </header>
@@ -133,6 +134,7 @@ export default function Page() {
               <div className="hero-actions">
                 <a className="btn btn-primary" href={RESUME} target="_blank" rel="noopener"><Download aria-hidden="true" />Download Resume</a>
                 <a className="btn btn-ghost" href="#contact"><Mail aria-hidden="true" />Get in touch</a>
+                <a className="btn btn-ghost" href="/credentials">View Credentials <ArrowUpRight aria-hidden="true" /></a>
               </div>
             </div>
             <a className="circle-link" href="#work" aria-label="Explore my work"><ArrowDownRight aria-hidden="true" /></a>
@@ -156,13 +158,30 @@ export default function Page() {
           <div className="experience-list">
             <article className="experience-item"><span className="experience-number">01</span><div><h3>Chilton County Sheriff&apos;s Department</h3><p className="experience-role">Lieutenant Investigator · Patrol Supervisor · Jail Administrator</p><p>Supervised four investigators on a caseload of serious crimes, fraud, and identity theft. Conducted interviews, assessed conflicting accounts, collected evidence, and prepared reports, warrants, and case files. Coordinated with local, state, and federal agencies and trained personnel in evidence collection. Managed correctional operations, staffing, and an annual budget exceeding $1 million. SWAT experience and team leadership in high-stress, emotionally charged situations requiring calm judgment, clear communication, and coordinated action.</p><p className="experience-highlight">Investigator of the Year · 2013</p></div></article>
             <article className="experience-item"><span className="experience-number">02</span><div><h3>Additional experience</h3><p>EMT-Basic with Clanton Fire Department. Apprentice electrician with Wayne J. Griffin Electric, Inc., completing three years of apprenticeship training and using test equipment to identify faults. Self-employed in home improvement and restoration.</p></div></article>
-            <details className="training-details" open><summary><span><span className="experience-number">03</span>Training</span><ArrowDownRight aria-hidden="true" /></summary><div><p>Sirchie crime-scene training, Alabama Fire College fire-investigation training, and PATC courses in arson evidence, electrical fire investigation, and criminal investigation.</p></div></details>
+            <details className="training-details" open><summary><span><span className="experience-number">03</span>Training</span><ArrowDownRight aria-hidden="true" /></summary><div><p>Sirchie crime-scene training, Alabama Fire College fire-investigation training, and PATC courses in arson evidence, electrical fire investigation, and criminal investigation.</p><a className="text-link" href="/credentials">Browse original training records <ArrowUpRight aria-hidden="true" /></a></div></details>
             <article className="experience-item"><span className="experience-number">04</span><div><h3>Education</h3><p>B.S. in Cybersecurity, concentration in Generative AI, Southern New Hampshire University (online).</p></div></article>
           </div>
         </div>
         <div className="support-layout">
           <div className="approach-block"><p className="support-label">[ INVESTIGATIVE APPROACH ]</p><p>My investigative experience shapes how I build: ask clear questions, check assumptions, document what is known, and keep observations separate from conclusions. I bring that approach to research tools, property documentation, and my cybersecurity studies.</p></div>
           <div className="skills-block"><p className="support-label">[ CORE SKILLS ]</p><ul className="skills-row"><li>Team leadership and coordination</li><li>Decision-making under pressure</li><li>Investigation management</li><li>Investigative interviewing and information assessment</li><li>Evidence documentation and records management</li><li>Operations administration</li><li>Technical problem-solving</li></ul></div>
+        </div>
+      </section>
+
+      <section className="credentials-teaser section-shell" id="credentials">
+        <div className="section-heading"><p className="section-label">[ CREDENTIALS & TRAINING ]</p><p className="section-note">Original records supporting<br />the experience above.</p></div>
+        <div className="credentials-teaser-layout">
+          <div className="credentials-teaser-copy">
+            <h2>Training with<br /><em>the paperwork.</em></h2>
+            <p>29 selected original certificates covering investigations, tactical operations, corrections, emergency services, electrical apprenticeship, and digital coursework. Historical training records, not proof of current licensure.</p>
+            <div className="credentials-teaser-actions">
+              <a className="btn btn-primary" href="/credentials">Explore Credentials <ArrowUpRight aria-hidden="true" /></a>
+              <a className="btn btn-ghost" href="/Shane-Lockhart-Credential-Highlights.pdf" download="Shane-Lockhart-Credential-Highlights.pdf"><Download aria-hidden="true" />Download PDF</a>
+            </div>
+          </div>
+          <a href="/credentials" className="credentials-teaser-image" aria-label="Browse original certificate scans and the training portfolio">
+            <span>29 ORIGINAL DOCUMENTS  /  7 TRAINING AREAS <ArrowUpRight aria-hidden="true" /></span>
+          </a>
         </div>
       </section>
 
@@ -188,7 +207,7 @@ export default function Page() {
 
       <footer className="site-footer">
         <div><a className="wordmark" href="#top"><span>SL</span><span>SHANE LOCKHART</span></a><p>Investigator. Builder. Cybersecurity Student.</p></div>
-        <div className="footer-right"><a href={`mailto:${EMAIL}`}>{EMAIL}</a><a href={RESUME} target="_blank" rel="noopener">Resume <Download aria-hidden="true" /></a><a href="#top">Back to top <ArrowUpRight aria-hidden="true" /></a></div>
+        <div className="footer-right"><a href={`mailto:${EMAIL}`}>{EMAIL}</a><a href={RESUME} target="_blank" rel="noopener">Resume <Download aria-hidden="true" /></a><a href="/credentials">Credentials <ArrowUpRight aria-hidden="true" /></a><a href="#top">Back to top <ArrowUpRight aria-hidden="true" /></a></div>
       </footer>
     </main>
   )
